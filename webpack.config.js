@@ -156,13 +156,32 @@ const multiConfig = [
       sourceMapFilename: 'hls.js.map',
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/dist/',
-      library: 'Hls',
-      libraryTarget: 'umd',
-      libraryExport: 'default',
+      library: {
+        name: 'Hls',
+        target: 'umd',
+        export: 'default'
+      },
       globalObject: 'this', // https://github.com/webpack/webpack/issues/6642#issuecomment-370222543
     },
     plugins: mainPlugins,
     devtool: 'source-map',
+  },
+  {
+    name: 'dist',
+    mode: 'development',
+    output: {
+      filename: 'hls.module.js',
+      chunkFileName: '[name].js',
+      sourceMapFilename: 'hls.module.js.map',
+      path: path.resolve(__dirname, 'dist'),
+      publicPath: '/dist/',
+      library: {
+        name: 'Hls',
+        target: 'module',
+        export: 'default'
+      },
+      globalObject: 'this', // https://github.com/webpack/webpack/issues/6642#issuecomment-370222543
+    }
   },
   {
     name: 'dist',
@@ -172,9 +191,11 @@ const multiConfig = [
       chunkFilename: '[name].js',
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/dist/',
-      library: 'Hls',
-      libraryTarget: 'umd',
-      libraryExport: 'default',
+      library: {
+        name: 'Hls',
+        target: 'umd',
+        export: 'default'
+      },
       globalObject: 'this',
     },
     plugins: mainPlugins,
@@ -189,9 +210,11 @@ const multiConfig = [
       sourceMapFilename: 'hls.light.js.map',
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/dist/',
-      library: 'Hls',
-      libraryTarget: 'umd',
-      libraryExport: 'default',
+      library: {
+        name: 'Hls',
+        target: 'umd',
+        export: 'default'
+      },
       globalObject: 'this',
     },
     resolve: {
@@ -208,9 +231,11 @@ const multiConfig = [
       chunkFilename: '[name].js',
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/dist/',
-      library: 'Hls',
-      libraryTarget: 'umd',
-      libraryExport: 'default',
+      library: {
+        name: 'Hls',
+        target: 'umd',
+        export: 'default'
+      },
       globalObject: 'this',
     },
     resolve: {
@@ -229,9 +254,11 @@ const multiConfig = [
       sourceMapFilename: 'hls-demo.js.map',
       path: path.resolve(__dirname, 'dist'),
       publicPath: '/dist/',
-      library: 'HlsDemo',
-      libraryTarget: 'umd',
-      libraryExport: 'default',
+      library: {
+        name: 'Hls',
+        target: 'umd',
+        export: 'default'
+      },
       globalObject: 'this', // https://github.com/webpack/webpack/issues/6642#issuecomment-370222543
     },
     plugins: [
